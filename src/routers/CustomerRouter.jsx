@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "../views/customer/Home";
-import Cart from "../views/customer/cart";
+import Cart from "../views/customer/Cart";
 import Checkout from "../views/customer/Checkout";
 import NewAddress from "../views/customer/NewAddress";
 import ProductDetail from "../views/customer/ProductDetail";
