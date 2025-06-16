@@ -9,6 +9,17 @@ const Map = ({ route, enableSelection = false, onSelectLocation, selectedCoordin
   const markerRef = useRef(null);
   const markersRef = useRef([]);
 
+  const markerIcon = new L.Icon({
+    iconUrl: '/marker-icon.png',
+    iconRetinaUrl: '/marker-icon-2x.png',
+    shadowUrl: '/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    tooltipAnchor: [16, -28],
+    shadowSize: [41, 41]
+  });
+
   useEffect(() => {
     if (!mapInstanceRef.current) {
       // Khởi tạo bản đồ
@@ -48,7 +59,7 @@ const Map = ({ route, enableSelection = false, onSelectLocation, selectedCoordin
         }
 
         // Thêm marker mới
-        markerRef.current = L.marker([lat, lng]).addTo(map);
+        markerRef.current = L.marker([lat, lng], { icon: markerIcon }).addTo(map);
 
         // Gọi callback để gửi tọa độ ra ngoài
         if (onSelectLocation) {
@@ -72,7 +83,7 @@ const Map = ({ route, enableSelection = false, onSelectLocation, selectedCoordin
       markerRef.current.remove();
     }
 
-    markerRef.current = L.marker([lat, lng]).addTo(map);
+    markerRef.current = L.marker([lat, lng], { icon: markerIcon }).addTo(map);
 
     if (shouldAutoPan) {
       map.setView([lat, lng], 16); // ❗chỉ zoom nếu là vị trí hiện tại
@@ -87,7 +98,7 @@ const Map = ({ route, enableSelection = false, onSelectLocation, selectedCoordin
     markersRef.current = [];
 
     markerCoordinates.forEach(({ lat, lng }) => {
-      const marker = L.marker([lat, lng]).addTo(map);
+      const marker = L.marker([lat, lng], { icon: markerIcon }).addTo(map);
       markersRef.current.push(marker);
     });
   }, [markerCoordinates]);
