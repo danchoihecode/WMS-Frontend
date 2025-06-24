@@ -21,7 +21,6 @@ import { SearchIcon } from "../../../components/icon/SearchIcon";
 import { columns, statusOptions } from "../../../config/deliveryperson";
 import { useState, useEffect, useMemo, useCallback } from "react";
 import { request } from "../../../api";
-import { formatDatev1 } from '../../../utils/utils';
 import { Badge } from "../../../components/button/badge";
 import { toast, Toaster } from "react-hot-toast";
 
@@ -348,9 +347,7 @@ export default function DeliveryPerson() {
             <TableRow key={item.userLoginId}>
               {(columnKey) => (
                 <TableCell>
-                  {columnKey === "dateUpdated"
-                    ? formatDatev1(item.dateUpdated)
-                    : renderCell(item, columnKey)}
+                  {renderCell(item, columnKey)}
                 </TableCell>
               )}
             </TableRow>
