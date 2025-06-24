@@ -8,7 +8,7 @@ export function cn(...inputs) {
 }
 
 export const formatDate = (dateString) => {
-  const date = new Date(dateString + '+07:00');
+  const date = new Date(dateString);
   const options = {
     year: 'numeric',
     month: '2-digit',
@@ -16,6 +16,7 @@ export const formatDate = (dateString) => {
     hour: '2-digit',
     minute: '2-digit',
     hour12: false,
+    timeZone: 'Asia/Ho_Chi_Minh'
   };
   return date.toLocaleString('en-GB', options);
 };
