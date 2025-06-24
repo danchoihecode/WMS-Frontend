@@ -21,7 +21,7 @@ import { columns } from "../../../config/product";
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect, useMemo, useCallback } from "react";
 import { request } from "../../../api";
-import { formatDate } from '../../../utils/utils';
+import { formatDatev1 } from '../../../utils/utils';
 
 const buttonText = "Add product";
 export default function ProductList() {
@@ -218,7 +218,7 @@ export default function ProductList() {
             {(columnKey) => (
               <TableCell>
                 {columnKey === "dateUpdated"
-                  ? formatDate(item.dateUpdated)
+                  ? formatDatev1(item.dateUpdated)
                   : renderCell(item, columnKey)}
               </TableCell>
             )}
