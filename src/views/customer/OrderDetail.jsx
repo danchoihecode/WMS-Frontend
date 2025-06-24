@@ -13,7 +13,7 @@ import {
     TableRow,
 } from '@mui/material';
 import { useNavigate, useParams } from 'react-router-dom';
-import { formatDate, formatPrice } from '../../utils/utils';
+import { formatDatev1, formatPrice } from '../../utils/utils';
 import BreadcrumbsCustom from '../../components/BreadcrumbsCustom';
 import { request } from '../../api';
 
@@ -66,7 +66,7 @@ const OrderDetail = () => {
                         <Typography variant="h6" gutterBottom>
                             General Information
                         </Typography>
-                        <Typography><b>Order Date:</b> {generalInfo && formatDate(generalInfo.orderDate)}</Typography>
+                        <Typography><b>Order Date:</b> {generalInfo && formatDatev1(generalInfo.orderDate)}</Typography>
                         <Typography><b>Delivery Fee:</b> {generalInfo && formatPrice(generalInfo.deliveryFee)}</Typography>
                         <Typography><b>Total Product Cost:</b> {generalInfo && formatPrice(generalInfo.totalProductCost)}</Typography>
                         <Typography><b>Total Order Cost:</b> {generalInfo && formatPrice(generalInfo.totalOrderCost)}</Typography>

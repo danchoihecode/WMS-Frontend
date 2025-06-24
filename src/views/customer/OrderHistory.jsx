@@ -16,7 +16,7 @@ import {
 } from '@mui/material';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import BreadcrumbsCustom from "../../components/BreadcrumbsCustom";
-import { formatDate, formatPrice } from '../../utils/utils';
+import { formatDatev1, formatPrice } from '../../utils/utils';
 import { request } from '../../api';
 
 const OrderHistory = () => {
@@ -91,7 +91,7 @@ const OrderHistory = () => {
                                     ) : (
                                         orders.map((order, index) => (
                                             <TableRow key={index}>
-                                                <TableCell align="center">{formatDate(order.orderDate)}</TableCell>
+                                                <TableCell align="center">{formatDatev1(order.orderDate)}</TableCell>
                                                 <TableCell align="center">{order.customerName}</TableCell>
                                                 <TableCell align="center">{formatPrice(order.totalOrderCost)}</TableCell>
                                                 <TableCell align="center">{order.status?.replace(/_/g, ' ')}</TableCell>

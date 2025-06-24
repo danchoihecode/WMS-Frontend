@@ -20,7 +20,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useNavigate, useParams } from 'react-router-dom';
 import { request } from '../../../api';
 import Skeleton from '@mui/material/Skeleton';
-import { formatDate } from '../../../utils/utils';
+import { formatDatev1 } from '../../../utils/utils';
 import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
 
@@ -206,7 +206,7 @@ const InventoryList = () => {
                                         <TableCell width={100}>{item.lotId}</TableCell>
                                         <TableCell width={100}>{item.availableQuantity}</TableCell>
                                         <TableCell width={100}>{item.quantityOnHandTotal}</TableCell>
-                                        <TableCell width={150}>{formatDate(item.lastUpdatedStamp)}</TableCell>
+                                        <TableCell width={150}>{formatDatev1(item.lastUpdatedStamp)}</TableCell>
                                     </TableRow>
                                 ))}
                         </TableBody>

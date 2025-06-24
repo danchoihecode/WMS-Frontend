@@ -16,7 +16,7 @@ import {
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useNavigate, useParams } from 'react-router-dom';
 import { request } from '../../api';
-import { formatDate, formatPrice } from '../../utils/utils';
+import { formatDatev1, formatPrice } from '../../utils/utils';
 
 const SaleOrderDetail = () => {
   const navigate = useNavigate();
@@ -82,7 +82,7 @@ const SaleOrderDetail = () => {
             <Typography variant="h6" gutterBottom>
               Order information
             </Typography>
-            <Typography><b>Order date:</b> {generalInfo && formatDate(generalInfo.orderDate)}</Typography>
+            <Typography><b>Order date:</b> {generalInfo && formatDatev1(generalInfo.orderDate)}</Typography>
             <Typography><b>Delivery fee:</b> {generalInfo && formatPrice(generalInfo.deliveryFee)}</Typography>
             <Typography><b>Total product cost:</b> {generalInfo && formatPrice(generalInfo.totalProductCost)}</Typography>
             <Typography><b>Total order cost:</b> {generalInfo && formatPrice(generalInfo.totalOrderCost)}</Typography>

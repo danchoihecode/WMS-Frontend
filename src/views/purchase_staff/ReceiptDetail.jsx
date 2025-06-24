@@ -16,7 +16,7 @@ import {
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useNavigate, useParams } from 'react-router-dom';
 import { request } from '../../api';
-import { formatDate } from '../../utils/utils';
+import { formatDate, formatDatev1 } from '../../utils/utils';
 const ReceiptDetail = () => {
   const navigate = useNavigate();
   const { receiptId } = useParams();
@@ -63,7 +63,7 @@ const ReceiptDetail = () => {
             </Typography>
             <Typography><b>Status:</b> {generalInfo && generalInfo.status}</Typography>
             <Typography><b>Created by:</b>  {generalInfo && generalInfo.createdBy}</Typography>
-            <Typography><b>Created time:</b> {generalInfo && formatDate(generalInfo.createdStamp)}</Typography>
+            <Typography><b>Created time:</b> {generalInfo && formatDatev1(generalInfo.createdStamp)}</Typography>
             <Typography><b>Description:</b> {generalInfo && generalInfo.description}</Typography>
           </Paper>
         </Grid>

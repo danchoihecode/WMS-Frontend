@@ -17,7 +17,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import { useNavigate, useParams } from 'react-router-dom';
 import { request } from "../../../api";
-import { formatDate, formatPrice } from '../../../utils/utils';
+import { formatDatev1, formatPrice } from '../../../utils/utils';
 
 const OrderDetail = () => {
   const navigate = useNavigate();
@@ -58,7 +58,7 @@ const OrderDetail = () => {
         {generalInfo && customerInfo &&  (
           <Grid container spacing={2}>
             <Grid item xs={6}>
-              <Typography><strong>Order date:</strong> {formatDate(generalInfo.orderDate)}</Typography>
+              <Typography><strong>Order date:</strong> {formatDatev1(generalInfo.orderDate)}</Typography>
               <Typography><strong>Order type:</strong> {generalInfo.orderType}</Typography>
               <Typography><strong>Status:</strong> {generalInfo.status.replace(/_/g, ' ')}</Typography>
               <Typography><strong>Description:</strong> {generalInfo.description}</Typography>

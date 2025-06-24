@@ -20,7 +20,7 @@ import { columns, statusOptions } from "../../config/saleorder";
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect, useMemo, useCallback } from "react";
 import { request } from "../../api";
-import { formatDate, formatPrice } from '../../utils/utils';
+import { formatDatev1, formatPrice } from '../../utils/utils';
 const statusColorMap = {
   CREATED: "default",
   CANCELLED: "destructive",
@@ -226,7 +226,7 @@ export default function SaleOrderList() {
             {(columnKey) => (
               <TableCell>
                 {columnKey === "orderDate"
-                  ? formatDate(item.orderDate)
+                  ? formatDatev1(item.orderDate)
                   : (columnKey === "totalOrderCost" ? formatPrice(item.totalOrderCost) : renderCell(item, columnKey))}
               </TableCell>
             )}
