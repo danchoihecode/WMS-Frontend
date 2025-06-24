@@ -8,7 +8,7 @@ export function cn(...inputs) {
 }
 
 export const formatDate = (dateString) => {
-  const date = new Date(dateString);
+  const date = new Date(dateString.slice(0, 23) + 'Z');
   const options = {
     year: 'numeric',
     month: '2-digit',
