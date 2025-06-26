@@ -1,7 +1,7 @@
 const prod = {
   url: {
     KEYCLOAK_BASE_URL: "https://erp3.soict.ai/iam",
-    API_URL: "https://wms-backend-production.up.railway.app/api",
+    API_URL: "https://wms-backend.up.railway.app/api",
   },
 };
 
